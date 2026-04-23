@@ -5,10 +5,12 @@ import Auth from './pages/Auth'
 import Checkout from './pages/Checkout'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/NavBar'
+import AuthProvider from './context/AuthContext'
 
 function App() {
 
   return (
+    <AuthProvider>
     <div className='App'>
       <Navbar />
       <Routes>
@@ -17,6 +19,7 @@ function App() {
         <Route path='/checkout' element={<Checkout />} />
       </Routes>
     </div>
+    </AuthProvider>
   )
 }
 
